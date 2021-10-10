@@ -1,0 +1,47 @@
+.clock{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background:rgb(243, 243, 243);
+    color: black;
+    border-radius: 70px 70px 70px 70px;
+}
+
+.controls{
+    position: relative;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #E1E1E1 0%, #FFFFFF 100%);
+    box-shadow: -3.94749e-14px 40.2667px 80.5333px rgba(51, 51, 51, 0.1665), inset 1.04389e-14px -10.6483px 10.6483px #D9D9D9, inset -1.04389e-14px 10.6483px 10.6483px #FFFFFF;
+}
+.controls i{
+    cursor: pointer;
+}
+
+.time{
+    margin: 10px 20px 10px 10px;
+    font-size: 1.5em;
+}
+.reset_btn{
+    position: absolute;
+    left: 20px;
+    bottom: -10px;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    padding: 3px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: .75em;
+
+    background: linear-gradient(180deg, #FFCC00 0%, #FFCC00 100%);
+    box-shadow: 8.73581e-16px 14.2667px 28.5333px rgba(49, 32, 0, 0.24), inset -2.71781e-16px -4.43852px 4.43852px #C48101, inset 2.71781e-16px 4.43852px 4.43852px #FFBB01;
+}

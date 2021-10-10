@@ -1,0 +1,120 @@
+.navbar {
+    background-color: var(--color-bg-primary);
+    color: var(--color-black);
+    height: var(--navbar-height);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: Fixed;
+    top: 0;
+    z-index: 10 ;
+    border-bottom: 1px solid rgba(122, 122, 122, 0.219);
+  }
+  
+  .navbar_container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  /* .navbar_logo{
+    background: url('/assets/logo_bg.png');
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-position:-99px -130px;
+    background-size: 200px 200px;
+  } */
+  .logo{
+    height: 30px;
+    margin: 20px;
+    
+  }
+
+  .navbar_logo_name{
+    font-size: 1.5em;
+    margin : 0 20px;  
+    font-weight: 800;
+  }
+  
+  .nav_menu {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-grow: 1;
+    list-style: none;
+    text-align: center;
+    margin-right: 15px;
+  }
+
+  .nav_menu_hidden{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 100;
+    list-style: none;
+    text-align: center;
+  }
+
+  .nav_item {
+    text-align: center;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: .9em;
+  }
+
+  .menu_icon {
+    display: none;
+    margin: 10px 10px 10px 0;
+    width: 20px;
+  }
+  .menu_icon i{
+    font-weight: 100;
+  }
+
+  @media screen and (max-width: 960px) {
+  
+    .nav_menu_hidden {
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      list-style: none;
+      text-align: center;
+      width: 100%;
+      height: 100vh;
+      position: absolute;
+      /* top:0; */
+      z-index: 5;
+      top: var(--navbar-height);
+      left: -100%;
+      opacity: 1;
+      transition: all 0.5s ease;
+    }
+
+    .nav_menu_hidden > *{
+      margin: 15px 0;
+      font-size: 1.2em;
+      text-transform: uppercase;
+    }
+  
+    .nav_menu_hidden.active {
+      background: var(--color-bg-primary);
+      left: 0;
+      opacity: 1;
+      transition: all 0.5s ease;
+      z-index: 1;
+    }
+  
+  
+    .menu_icon {
+      display: block;
+      font-size: 1.25rem;
+      cursor: pointer;
+    }
+
+  }
+

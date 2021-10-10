@@ -1,0 +1,12 @@
+.canvas_container{
+    position: relative;
+}
+
+.img{
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-left: 2px solid var(--color-white);
+    border-bottom: 2px solid var(--color-white);
+    border-radius: 0 0 0 10px;
+}
