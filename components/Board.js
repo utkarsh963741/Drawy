@@ -84,8 +84,8 @@ function Board(props) {
                         <i className={"fas fa-trash-alt"}></i>
                     </div>
                     <Timer/>
-                    <div className={styles.icon} onClick={submitImage}>
-                        {loading?'Loading':<i className={"fas fa-upload"}></i>}
+                    <div className={styles.icon} onClick={submitImage} style={{color:'var(--color-black)'}}>
+                        {loading?'  Loading...':<i className={"fas fa-upload"}></i>}
                     </div>
             </div>
 

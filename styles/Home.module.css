@@ -7,12 +7,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
+    text-align: center;
 }
 
 .title{
     background-color:White;
     padding: 10px 20px;
-    margin: 30px;
+    margin: 50px;
     border-radius: 100px;
     cursor: pointer;
     border: 2px solid var(--color-black);

@@ -64,10 +64,10 @@ function Account() {
     {
         var ImageGrid = [...imageData].map(function(img_data, index){
             return(
-                <div key={index} class={styles.card}>
+                <div key={index} className={styles.card}>
                     <img src={img_data.image} alt="Avatar" width="100%" height="200px"/>
                     <hr></hr>
-                    <div class={styles.desc}>
+                    <div className={styles.desc}>
                         <h4><b>{img_data.owner}</b></h4> 
                         <p>{img_data.topic}</p>
                         <p>Date : {img_data.created_at.slice(0, 16)}</p>
@@ -88,7 +88,9 @@ function Account() {
 
             <Navbar/>
             <div className={styles.container}>
-                <div></div>
+                <h1 style={{fontSize:'75px', color:'var(--color-black)',marginTop:'60px'}}>🎨 Welcome to Drawy 🎨</h1>
+                <h2 style={{fontSize:'40px', color:'var(--color-black)'}}> Draw, Share, Explore, Enjoy </h2>
+                <h5 style={{fontSize:'12px', color:'var(--color-black)',marginTop:'60px'}}>remember to click the upload button to upload your doodle to database<br/>using the timer is optional, use it to challenge yourself</h5>
                 <Link href='/draw'><h1 className={styles.title}>Start Drawing</h1></Link>
                 <div className={styles.images}>{ImageGrid}</div>
             </div>
