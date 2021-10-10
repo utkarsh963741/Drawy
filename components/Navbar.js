@@ -65,7 +65,7 @@ function Navbar() {
                 <div className={styles.navbar_container}>
                         <div className={styles.navbar_logo}>
                             {/* <img src="/vercel.svg" className={styles.logo} alt=""/> */}
-                            <p className={styles.navbar_logo_name}>Drawy</p>
+                            <Link href='/account'><p className={styles.navbar_logo_name}>Drawy</p></Link>
                         </div>
                     
                     <ul className={click? styles.nav_menu_hidden+" "+styles.active : styles.nav_menu_hidden}>

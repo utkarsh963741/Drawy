@@ -1,11 +1,16 @@
 import React, {useRef, useEffect, useState} from 'react'
 import styles from '../styles/Board.module.css'
+import { supabase } from '../utils/supabaseClient'
+import Timer from './Timer'
+import { useRouter } from 'next/router'
 
-function Board() {
+function Board(props) {
+    const router = useRouter()
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
     const [isDrawing, setIsDrawing] = useState(false)
     const [img, setImg] = useState(null)
+    const [loading, setLoading] = useState(false)
 
     useEffect(() => {
         const canvas = canvasRef.current;
@@ -55,8 +60,35 @@ function Board() {
 
     }
 
+    const clearCanvas = () => {
+        contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+    }
+
+    async function submitImage(){
+        setLoading(true)
+
+        const { data, error } = await supabase
+        .from('Images')
+        .insert([
+            { owner: props.user.email, image : canvasRef.current.toDataURL() }
+        ])
+
+        setLoading(false)
+        router.push('/account')
+    }
+
     return (
         <div className={styles.canvas_conatiner}>
+            <div className={styles.controls}>
+                    <div className={styles.icon}  onClick={clearCanvas}>
+                        <i className={"fas fa-trash-alt"}></i>
+                    </div>
+                    <Timer/>
+                    <div className={styles.icon} onClick={submitImage}>
+                        {loading?'Loading':<i className={"fas fa-upload"}></i>}
+                    </div>
+            </div>
+
             <canvas
                 onMouseDown={startDrawing}
                 onMouseUp={finishDrawing}

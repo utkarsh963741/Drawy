@@ -40,7 +40,7 @@ body {
   background-repeat: repeat;
   background-size: contain; */
   scroll-behavior: smooth;
-  overflow: hidden;
+  overflow-x: hidden;
   transition: background-color 0.25s ease-in-out;
   background-color: var(--color-bg-primary);
   color: var(--color-black);
